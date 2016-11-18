@@ -17,7 +17,7 @@ var AppComponent = (function () {
             name: '',
             address: {
                 street: '',
-                number: '',
+                number: '0',
                 postcode: '',
                 city: '',
                 country: ''

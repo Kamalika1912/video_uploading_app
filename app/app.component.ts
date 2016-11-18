@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
             name: '',
             address: {
                 street: '',
-                number: '',
+                number: '0',
                 postcode: '',
                 city: '',
                 country: ''

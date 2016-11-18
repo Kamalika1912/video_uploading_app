@@ -14,7 +14,7 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.ngOnInit = function () {
         this.customer = {
-            company: '',
+            name: '',
             address: {
                 street: '',
                 number: '',

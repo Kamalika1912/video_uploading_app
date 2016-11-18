@@ -1,9 +1,10 @@
 <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid)">
-    <!-- we will place our fields here -->
+    <h2>Customers</h2>
+    <!-- Fields-->
 
-    <!--name-->
+    <!-- Company name-->
     <div>
-        <label>Company Name</label>
+        <label>Company/Name</label>
         <!--bind name to ngModel, it's required with minimum 5 characters-->
         <input type="text"
                name="name" [(ngModel)]="customer.name"
@@ -26,6 +27,16 @@
                 Street is required.
             </small>
         </div>
+        <!--number-->
+        <div>
+            <label>Number</label>
+            <input type="text"
+                   name="number" [(ngModel)]="customer.address.number"
+                   #number="ngModel" required>
+            <small [hidden]="number.valid || (street.pristine && !f.submitted)" class="text-danger">
+                Number is required.
+            </small>
+        </div>
 
         <!--postcode-->
         <div>
@@ -33,6 +44,29 @@
             <input type="text"
                    name="postcode" [(ngModel)]="customer.address.postcode">
         </div>
+        <!--city-->
+        <div>
+            <label>City</label>
+            <input type="text"
+                   name="city" [(ngModel)]="customer.address.city">
+        </div>
+        <!--country-->
+        <div>
+            <label>Country</label>
+            <input type="text"
+                   name="country" [(ngModel)]="customer.address.country">
+        </div>
+    </div>
+
+    <!--E-Mail-->
+    <div>
+        <label>E-Mail</label>
+        <input type="text"
+               name="email" [(ngModel)]="customer.email"
+               #email="ngModel" required>
+        <small [hidden]="email.valid || (email.pristine && !f.submitted)" class="text-danger">
+            E-Mail is required.
+        </small>
     </div>
 
     <button type="submit">Submit</button>

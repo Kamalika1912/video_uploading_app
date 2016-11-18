@@ -1,5 +1,5 @@
 export interface Customer {
-    company: string;
+    name: string;
     address: {
         street?: string; // required
         number?: string; // required

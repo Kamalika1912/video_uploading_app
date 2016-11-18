@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
     public customer: Customer;
     ngOnInit() {
         this.customer = {
-            company: '',
+            name: '',
             address: {
                 street: '',
                 number: '',

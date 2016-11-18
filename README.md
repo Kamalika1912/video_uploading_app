@@ -1,0 +1,1 @@
+Angular 2 Application to help clients video management.

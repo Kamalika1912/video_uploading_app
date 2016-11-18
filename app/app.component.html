@@ -1,73 +1,77 @@
-<form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid)">
-    <h2>Customers</h2>
-    <!-- Fields-->
+<div class="container">
+    <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid)">
+        <h2>Customers</h2>
+        <!-- Fields-->
 
-    <!-- Company name-->
-    <div>
-        <label>Company/Name</label>
-        <!--bind name to ngModel, it's required with minimum 5 characters-->
-        <input type="text"
-               name="name" [(ngModel)]="customer.name"
-               #name="ngModel" required minlength="5">
-        <!--show error only when field is not valid & it's dirty or form submited-->
-        <small [hidden]="name.valid || (name.pristine && !f.submitted)">
-            Name is required (minimum 5 characters).
-        </small>
-    </div>
-
-    <!--adrress group-->
-    <div ngModelGroup="address">
-        <!--street-->
+        <!-- Company name-->
         <div>
-            <label>Street</label>
+            <label>Company/Name</label>
+            <!--bind name to ngModel, it's required with minimum 3 characters-->
             <input type="text"
-                   name="street" [(ngModel)]="customer.address.street"
-                   #street="ngModel" required>
-            <small [hidden]="street.valid || (street.pristine && !f.submitted)" class="text-danger">
-                Street is required.
-            </small>
-        </div>
-        <!--number-->
-        <div>
-            <label>Number</label>
-            <input type="text"
-                   name="number" [(ngModel)]="customer.address.number"
-                   #number="ngModel" required>
-            <small [hidden]="number.valid || (street.pristine && !f.submitted)" class="text-danger">
-                Number is required.
+                   name="name" [(ngModel)]="customer.name"
+                   #name="ngModel" required minlength="3">
+            <!--show error only when field is not valid & it's dirty or form submited-->
+            <small [hidden]="name.valid || (name.pristine && !f.submitted)">
+                Name is required (minimum 3 characters).
             </small>
         </div>
 
-        <!--postcode-->
-        <div>
-            <label>Post code</label>
-            <input type="text"
-                   name="postcode" [(ngModel)]="customer.address.postcode">
-        </div>
-        <!--city-->
-        <div>
-            <label>City</label>
-            <input type="text"
-                   name="city" [(ngModel)]="customer.address.city">
-        </div>
-        <!--country-->
-        <div>
-            <label>Country</label>
-            <input type="text"
-                   name="country" [(ngModel)]="customer.address.country">
-        </div>
-    </div>
+        <!--adrress group-->
+        <div ngModelGroup="address">
+            <!--street-->
+            <div>
+                <label>Street</label>
+                <input type="text"
+                       name="street" [(ngModel)]="customer.address.street"
+                       #street="ngModel" required>
+                <small [hidden]="street.valid || (street.pristine && !f.submitted)" class="text-danger">
+                    Street is required.
+                </small>
+            </div>
+            <!--number-->
+            <div>
+                <label>Number</label>
+                <input type="text"
+                       name="number" [(ngModel)]="customer.address.number"
+                       #number="ngModel" required>
+                <small [hidden]="number.valid || (street.pristine && !f.submitted)" class="text-danger">
+                    Number is required.
+                </small>
+            </div>
 
-    <!--E-Mail-->
-    <div>
-        <label>E-Mail</label>
-        <input type="text"
-               name="email" [(ngModel)]="customer.email"
-               #email="ngModel" required>
-        <small [hidden]="email.valid || (email.pristine && !f.submitted)" class="text-danger">
-            E-Mail is required.
-        </small>
-    </div>
+            <!--postcode-->
+            <div>
+                <label>Post code</label>
+                <input type="text"
+                       name="postcode" [(ngModel)]="customer.address.postcode">
+            </div>
+            <!--city-->
+            <div>
+                <label>City</label>
+                <input type="text"
+                       name="city" [(ngModel)]="customer.address.city">
+            </div>
+            <!--country-->
+            <div>
+                <label>Country</label>
+                <input type="text"
+                       name="country" [(ngModel)]="customer.address.country">
+            </div>
+        </div>
 
-    <button type="submit">Submit</button>
-</form>
+        <!--E-Mail-->
+        <div>
+            <label>E-Mail</label>
+            <input type="text"
+                   name="email" [(ngModel)]="customer.email"
+                   #email="ngModel" required>
+            <small [hidden]="email.valid || (email.pristine && !f.submitted)" class="text-danger">
+                E-Mail is required.
+            </small>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+
